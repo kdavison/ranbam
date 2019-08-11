@@ -1,0 +1,8 @@
+.gclient
+.gclient_entries
+artifacts
+artifacts/*
+tmp
+tmp/*
+dependencies
+dependencies/*
