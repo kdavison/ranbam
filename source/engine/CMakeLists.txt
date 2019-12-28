@@ -6,7 +6,7 @@ find_package(OpenGL REQUIRED)
 
 list(APPEND
   SOURCE_FILES
-  main.cpp
+  main.cc
   #graphics/vulkan/api/vk_debug_callback.cpp
 )
 
