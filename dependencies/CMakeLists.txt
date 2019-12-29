@@ -11,16 +11,16 @@ include(ExternalProject)
 
 list(APPEND DEPENDENCY_PROJECTS
 #  boost
-  spdlog
-  googletest
-  protobuf
+#  spdlog
+#  googletest
+#  protobuf
   assimp
   bullet3
-  breakpad
-  rng
-  glm
+#  breakpad
+#  rng
+#  glm
   eigen
-  glfw
+#  glfw
   enet
   moodycamel_concurrentqueue
 #  vulkan

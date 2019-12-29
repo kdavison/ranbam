@@ -10,3 +10,6 @@
 [submodule "dependencies/assimp"]
 	path = dependencies/assimp
 	url = https://github.com/assimp/assimp.git
+[submodule "dependencies/eigen"]
+	path = dependencies/eigen
+	url = https://github.com/eigenteam/eigen-git-mirror.git
