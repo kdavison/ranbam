@@ -4,5 +4,5 @@ artifacts
 artifacts/*
 tmp
 tmp/*
-dependencies
-dependencies/*
+build
+build/*

@@ -1,3 +1,12 @@
 [submodule "dependencies/enet"]
 	path = dependencies/enet
 	url = git@github.com:lsalzman/enet.git
+[submodule "dependencies/concurrentqueue"]
+	path = dependencies/concurrentqueue
+	url = https://github.com/cameron314/concurrentqueue.git
+[submodule "dependencies/bullet3"]
+	path = dependencies/bullet3
+	url = https://github.com/bulletphysics/bullet3.git
+[submodule "dependencies/assimp"]
+	path = dependencies/assimp
+	url = https://github.com/assimp/assimp.git
