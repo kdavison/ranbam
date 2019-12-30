@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
+project(ranbam)
+
 ## platform detection
 include(cmake/platform/platform.cmake)
 

@@ -1,6 +1,7 @@
 project(ranbam.engine)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
+set(OpenGL_GL_PREFERENCE GLVND)
 find_package(Threads REQUIRED)
 find_package(OpenGL REQUIRED)
 
@@ -24,17 +25,17 @@ include_directories(
 add_executable(${PROJECT_NAME}
   ${SOURCE_FILES}
 )
-add_dependencies(${PROJECT_NAME}
-  ranbam.shaders
-)
+#add_dependencies(${PROJECT_NAME}
+#  ranbam.shaders
+#)
 target_link_libraries(${PROJECT_NAME}
   boost_system
   boost_filesystem
-  vulkan
+#  vulkan
   Threads::Threads
-  glfw3
-  dl
-  X11
+#  glfw3
+#  dl
+#  X11
 #  ${OPENGL_gl_LIBRARY}
 )
 

@@ -10,11 +10,11 @@ project(ranbam.dependencies)
 include(ExternalProject)
 
 list(APPEND DEPENDENCY_PROJECTS
-#  boost
+  boost
 #  spdlog
 #  googletest
 #  protobuf
-  assimp
+#  assimp
   bullet3
 #  breakpad
 #  rng
