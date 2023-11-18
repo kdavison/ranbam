@@ -1,18 +1,6 @@
-[submodule "dependencies/enet"]
-	path = dependencies/enet
-	url = git@github.com:lsalzman/enet.git
-[submodule "dependencies/bullet3"]
-	path = dependencies/bullet3
-	url = https://github.com/bulletphysics/bullet3.git
-[submodule "dependencies/assimp"]
-	path = dependencies/assimp
-	url = https://github.com/assimp/assimp.git
-[submodule "dependencies/eigen"]
-	path = dependencies/eigen
-	url = https://github.com/eigenteam/eigen-git-mirror.git
-[submodule "dependencies/boost"]
-	path = dependencies/boost
-	url = https://github.com/boostorg/boost.git
 [submodule "dependencies/concurrentqueue"]
 	path = dependencies/concurrentqueue
 	url = https://github.com/cameron314/concurrentqueue.git
+[submodule "dependencies/rocket"]
+	path = dependencies/rocket
+	url = https://github.com/tripleslash/rocket.git

@@ -1,20 +1,11 @@
-cmake_minimum_required(VERSION 3.8)
-project(ranbam)
+cmake_minimum_required(VERSION 3.22.0 FATAL_ERROR)
+project(ranbam VERSION 0.0.0 LANGUAGES CXX C)
 
-## platform detection
-include(cmake/platform/platform.cmake)
-
-set(CMAKE_CXX_STANDARD 14)
+# force correct compiler options
+set(CMAKE_REQUIRED_FLAGS "-std=c++17 -std=c11")
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/artifacts")
-
-add_subdirectory(dependencies)
-
-include_directories(
-  ${CMAKE_INSTALL_PREFIX}/include
-)
-link_directories(
-  ${CMAKE_INSTALL_PREFIX}/lib
-)
-add_subdirectory(source)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
