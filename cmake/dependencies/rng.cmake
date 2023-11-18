@@ -1,9 +1,0 @@
-
-ExternalProject_Add(dependency_rng
-  SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/RNG
-  CONFIGURE_COMMAND ""
-  BUILD_COMMAND ""
-  INSTALL_COMMAND
-    mkdir -p ${CMAKE_INSTALL_PREFIX}/include/RNG &&
-    cp ${CMAKE_CURRENT_SOURCE_DIR}/RNG/rng.h ${CMAKE_INSTALL_PREFIX}/include/RNG
-)
