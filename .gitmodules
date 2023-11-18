@@ -4,3 +4,6 @@
 [submodule "dependencies/rocket"]
 	path = dependencies/rocket
 	url = https://github.com/tripleslash/rocket.git
+[submodule "dependencies/spdlog"]
+	path = dependencies/spdlog
+	url = https://github.com/gabime/spdlog.git
