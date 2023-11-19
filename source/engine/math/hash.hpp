@@ -17,7 +17,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #include <functional>
 #include <memory>
 
-namespace UTILITY
+namespace ranbam
+{
+namespace hash
 {
 
 template<class T>
@@ -65,4 +67,6 @@ struct hash<std::tuple<std::shared_ptr<T>, std::shared_ptr<T>>> {
     return std::hash<std::tuple<T*,T*>>{}(std::make_tuple(std::get<0>(e).get(), std::get<1>(e).get()));
   }
 };
+
+}
 }
