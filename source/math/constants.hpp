@@ -11,7 +11,6 @@
 
 namespace ranbam {
 namespace math {
-
 template<typename T>
 constexpr static std::enable_if_t<std::is_floating_point_v<T>, T> PI     = static_cast<T>(RANBAM_PI);
 

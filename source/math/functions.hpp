@@ -9,7 +9,7 @@ namespace ranbam
 namespace math
 {
 template<typename T>
-constexpr std::enable_if_t<std::is_floating_point_v<T>, T> lerp(T a, T b, T t) {
+constexpr std::enable_if_t<std::is_floating_point_v<T>, T> lerp(const T a, const T b, const T t) {
   if (std::isnan(a) || std::isnan(b) || std::isnan(t))
     return std::numeric_limits<T>::quiet_NaN();
   else if (a <= T{0} && b >= T{0}) || (a >= T{0} && b <= T{0})
@@ -22,7 +22,7 @@ constexpr std::enable_if_t<std::is_floating_point_v<T>, T> lerp(T a, T b, T t) {
 }
 
 template<typename T>
-constexpr std::enable_if_t<std::is_floating_point_v<T>, T> normalize(T x, T min, T max, T a, T b) {
+constexpr std::enable_if_t<std::is_floating_point_v<T>, T> normalize(const T x, const T min, const T max, const T a, const T b) {
   /* marshal value A into range(min, max) */
   if (std::isnan(x) || std::isnan(max) || std::isnan(min) || std::isnan(a) || std::isnan(b))
     return std::numeric_limits<T>::quiet_NaN();
@@ -33,7 +33,7 @@ constexpr std::enable_if_t<std::is_floating_point_v<T>, T> normalize(T x, T min,
 }
 
 template<typename T>
-constexpr std::enable_if_t<std::is_floating_point_v<T>, T> range_constraint(T x, T max) {
+constexpr std::enable_if_t<std::is_floating_point_v<T>, T> range_constraint(const T x, const T max) {
   if (std::isnan(x) || std::isnan(max))
     return std::numeric_limits<T>::quiet_NaN();
   else
