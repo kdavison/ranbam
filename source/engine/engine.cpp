@@ -1,41 +1,25 @@
 #include "engine/engine.hpp"
+#include <algorithm>
+#include <chrono>
 
 int32_t Engine::Run() {
-  double t = 0.0;
-  double dt = 0.01
-  double currenTime = hires_time_in_seconds();
-  double accumulator = 0.0;
-
-  State _previous;
-  State _current;
+  /*
+    framework.update();
+    systems.update();
+    application.update();
+  */
+  using std::chrono::literals;
+  using hrclock = std::chrono::high_resolution_clock;
+  using timepoint_t = std::chrono::time_point<clock>;
+  std::array<timepoint_t, 2> _time{hrclock::now()-16ms, hrclock::now()-32ms};
 
   while(_running) {
-    double newTime = time();
-    double frameTime = newTime - currenttime;
-    if (frameTime > 0.25)
-      frametime = 0.25;
-    currenttime = newTime;
-    accumulator += frameTime;
+    std::swap(_time[0], _time[1]);
+    _time[0] = hrclock::now();
+    const std::chrono::microseconds delta = std::chrono::duration_cast<std::chrono::microseconds>(_time[0]-_time[1]);
 
-    while(accumulator >= dt) {
-      previousState = currentState;
-      integrate(currentState, t, dt);                                    // physics->step(t, dt);
-      /*
-        update acceleration ( a = F/m)
-        update velocity = v0 + a*dt
-        update position = x0 + v*dt
-        check for collisions
-
-      */
-      t += dt;
-      accumulator -= dt;
-    }
-
-    double alpha = accumulator / dt;
-    State state = currentState * alpha + previousState * (1.0 - alpha ); // physics->slerp( alpha );
-
-    render(state);                                                       // renderer->render()
+    framework.update(t, delta);
+    systems.update(t, delta);
+    applicaiton.update(t,delta);
   }
-
-
 }

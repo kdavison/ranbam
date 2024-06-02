@@ -1,15 +1,22 @@
 #pragma once
 
 #include <eigen/Core>
+#include <cstdint>
 
 namespace ranbam
 {
-template<typename T>
-using Vector2 = ::Eigen::Matrix<T,2,1>;
+namespace math
+{
+template<typename T, std::size_t N>
+using Vector = ::Eigen::Matrix<T,N,1>;
 
 template<typename T>
-using Vector3 = ::Eigin::Matrix<T,3,1>;
+using Vector2 = Vector<T, 2>;
 
 template<typename T>
-using Vector4 = ::Eigin::Matrix<T,4,1>;
+using Vector3 = Vector<T,3>;
+
+template<typename T>
+using Vector4 = Vector<T,4>;
+}
 }

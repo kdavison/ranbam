@@ -1,15 +1,22 @@
 #pragma once
 
 #include <eigin/Geometry.hpp>
+#include <cstdint>
 
 namespace ranbam
 {
-template<typename T>
-using Matrix3 = ::Eigin::Matrix<T,3,3>;
+namespace math
+{
+template<typename T, std::size_t N, std::size_t M>
+using Matrix = ::Eigen::Matrix<T, N, M>;
 
 template<typename T>
-using Matrix4 = ::Eigin::Matrix<T,4,4>;
+using Matrix3 = Matrix<T,3,3>;
 
 template<typename T>
-using Quaternion<std::enable_if_t<std::is_floating_point_v<T>, T>> = ::Eigin::Quaternion<T>;
+using Matrix4 = Matrix<T,4,4>;
+
+template<typename T>
+using Quaternion = ::Eigin::Quaternion<std::enable_if_t<std::is_floating_point_v<T>, T>>;
+}
 }

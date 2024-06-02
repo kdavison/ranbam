@@ -10,6 +10,8 @@ namespace ranbam
 class Engine : noncopyable
 {
 public:
+  Engine(Framework, Systems, Application);
+
   bool isRunning() const { return _running; }
   int32_t Run();
 private:

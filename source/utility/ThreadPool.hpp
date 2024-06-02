@@ -41,7 +41,7 @@ public:
 private:
   std::atomic<bool> _running;
   std::vector<std::thread> _workers;
-  moodycamel::BlockingConcurrentQueue<std::function<void()>> _tasks;
+  ::moodycamel::BlockingConcurrentQueue<std::function<void()>> _tasks;
 };
 
 template<typename F, typename ... ARGS, std::enable_if_t<std::is_invocable_v<F&&, ARGS&&...>, int32_t>>
